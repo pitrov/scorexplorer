@@ -38,13 +38,13 @@
 				<table class="table blockDetails">
 					<thead>
 						<tr>
-							<th>type</th>
-							<th>fee</th>
-							<th>timestamp</th>
-							<th>signature</th>
-							<th>sender</th>
-							<th>recipient</th>
-							<th><span class="pull-right">amount</span></th>
+							<th>Type</th>
+							<th>Fee</th>
+							<th>Timestamp</th>
+							<th>Signature</th>
+							<th>Sender</th>
+							<th>Recipient</th>
+							<th><span class="pull-right">Amount</span></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -52,7 +52,7 @@
 							<td>{{item.type}}</td>
 							<td>{{item.fee}}</td>
 							<td>{{item.timestamp|date:'yyyy-MM-dd HH:mm:ss'}}</td>
-							<td>{{item.signature|limitTo:8}}...</td>
+							<td><a ui-sref="tx-details({signature:item.signature})">{{item.signature|limitTo:8}}...</a></td>
 							<td><a ui-sref="address-details({address:item.sender})" title="{{item.sender}}">{{item.sender|limitTo:8}}...</a></td>
 							<td><a ui-sref="address-details({address:item.recipient})" title="{{item.recipient}}">{{item.recipient|limitTo:8}}...</a></td>
 							<td><span class="pull-right">{{item.amount|currency:''}}</span></td>

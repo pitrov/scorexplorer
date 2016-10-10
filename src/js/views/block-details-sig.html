@@ -3,17 +3,18 @@
     <div class="col-lg-12">
         <div class="panel panel-info">
             <div class="panel-heading">
-            Block #{{ctrl.height}}
+            Block {{ctrl.signature}}
             </div>
 
             <div class="panel-body">
 
                 <table class="table blockDetails">
                     <tbody>
+											<!--
                     <tr>
                         <td class="col-md-2">Height</td>
                         <td><button class="btn btn-primary btn-xs" ng-click="ctrl.prev()">prev</button> {{ctrl.height}} <button class="btn btn-primary btn-xs" ng-click="ctrl.next()">next</button></td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td>Version</td>
                         <td>{{ctrl.details.version}}</td>
@@ -78,7 +79,7 @@
                         <td>{{item.type}}</td>
                         <td>{{item.fee}}</td>
                         <td>{{item.timestamp|date:'yyyy-MM-dd HH:mm:ss'}}</td>
-                        <td><a ui-sref="tx-details({signature:item.signature})">{{item.signature|limitTo:7}}...</a></td>
+                        <td>{{item.signature|limitTo:7}}...</td>
                         <td><a ui-sref="address-details({address:item.sender})" title="{{item.sender}}">{{item.sender|limitTo:7}}...</a></td>
                         <td><a ui-sref="address-details({address:item.recipient})" title="{{item.recipient}}">{{item.recipient|limitTo:7}}...</a></td>
                         <td><span class="pull-right">{{item.amount|currency:''}}</span></td>

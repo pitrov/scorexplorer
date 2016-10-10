@@ -35,7 +35,7 @@
 							});
 			$http.get(apiMethods.transactions.unconfirmed)
 							.success(function (data) {
-								ctrl.unconfirmedTxs = data[0];
+								ctrl.unconfirmedTxs = data;
 							});
 			$http.get(apiMethods.consensus.puz)
 							.success(function (data) {
@@ -43,7 +43,7 @@
 							});
 			$http.get(apiMethods.consensus.algo)
 							.success(function (data) {
-								ctrl.consensus.algo = data["consensus-algo"];
+								ctrl.consensus.algo = data.consensusAlgo;
 							});
 			$http.get(apiMethods.consensus.target)
 							.success(function (data) {
